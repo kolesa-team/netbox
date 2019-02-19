@@ -113,7 +113,141 @@
                         </li>
                     </ul>
                 </li>
-                z
+                <li class="dropdown{% if request.path|contains:'/dcim/device,/dcim/virtual-chassis,/dcim/manufacturers/,/dcim/platforms/,/dcim/cable,-connections/,/dcim/inventory-items/' %} active{% endif %}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Devices <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">Devices</li>
+                        <li>
+                            {% if perms.dcim.add_device %}
+                                <div class="buttons pull-right">
+                                    <a href="{% url 'dcim:device_add' %}" class="btn btn-xs btn-success" title="Add"><i class="fa fa-plus"></i></a>
+                                    <a href="{% url 'dcim:device_import' %}" class="btn btn-xs btn-info" title="Import"><i class="fa fa-download"></i></a>
+                                </div>
+                            {% endif %}
+                            <a href="{% url 'dcim:device_list' %}">Devices</a>
+                        </li>
+                        <li>
+                            {% if perms.dcim.add_devicerole %}
+                                <div class="buttons pull-right">
+                                    <a href="{% url 'dcim:devicerole_add' %}" class="btn btn-xs btn-success" title="Add"><i class="fa fa-plus"></i></a>
+                                    <a href="{% url 'dcim:devicerole_import' %}" class="btn btn-xs btn-info" title="Import"><i class="fa fa-download"></i></a>
+                                </div>
+                            {% endif %}
+                            <a href="{% url 'dcim:devicerole_list' %}">Device Roles</a>
+                        </li>
+                        <li>
+                            {% if perms.dcim.add_platform %}
+                                <div class="buttons pull-right">
+                                    <a href="{% url 'dcim:platform_add' %}" class="btn btn-xs btn-success" title="Add"><i class="fa fa-plus"></i></a>
+                                    <a href="{% url 'dcim:platform_import' %}" class="btn btn-xs btn-info" title="Import"><i class="fa fa-download"></i></a>
+                                </div>
+                            {% endif %}
+                            <a href="{% url 'dcim:platform_list' %}">Platforms</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'dcim:virtualchassis_list' %}">Virtual Chassis</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Device Types</li>
+                        <li>
+                            {% if perms.dcim.add_devicetype %}
+                                <div class="buttons pull-right">
+                                    <a href="{% url 'dcim:devicetype_add' %}" class="btn btn-xs btn-success" title="Add"><i class="fa fa-plus"></i></a>
+                                    <a href="{% url 'dcim:devicetype_import' %}" class="btn btn-xs btn-info" title="Import"><i class="fa fa-download"></i></a>
+                                </div>
+                            {% endif %}
+                            <a href="{% url 'dcim:devicetype_list' %}">Device Types</a>
+                        </li>
+                        <li>
+                            {% if perms.dcim.add_manufacturer %}
+                                <div class="buttons pull-right">
+                                    <a href="{% url 'dcim:manufacturer_add' %}" class="btn btn-xs btn-success" title="Add"><i class="fa fa-plus"></i></a>
+                                    <a href="{% url 'dcim:manufacturer_import' %}" class="btn btn-xs btn-info" title="Import"><i class="fa fa-download"></i></a>
+                                </div>
+                            {% endif %}
+                            <a href="{% url 'dcim:manufacturer_list' %}">Manufacturers</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Inventory</li>
+                        <li>
+                            {% if perms.dcim.add_inventoryitem %}
+                                <div class="buttons pull-right">
+                                    <a href="{% url 'dcim:inventoryitem_import' %}" class="btn btn-xs btn-info" title="Import"><i class="fa fa-download"></i></a>
+                                </div>
+                            {% endif %}
+                            <a href="{% url 'dcim:inventoryitem_list' %}">Inventory Items</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Connections</li>
+                        <li>
+                            {% if perms.dcim.add_cable %}
+                                <div class="buttons pull-right">
+                                    <a href="{% url 'dcim:cable_import' %}" class="btn btn-xs btn-info" title="Import"><i class="fa fa-download"></i></a>
+                                </div>
+                            {% endif %}
+                            <a href="{% url 'dcim:cable_list' %}">Cables</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'dcim:console_connections_list' %}">Console Connections</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'dcim:power_connections_list' %}">Power Connections</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'dcim:interface_connections_list' %}">Interface Connections</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown{% if request.path|contains:'/dcim/device,/dcim/virtual-chassis,/dcim/manufacturers/,/dcim/platforms/,/dcim/cable,-connections/,/dcim/inventory-items/' %} active{% endif %}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PowerDNS <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">PowerDNS</li>
+                        <li>
+                            {% if perms.dcim.add_device %}
+                                <div class="buttons pull-right">
+                                    <a href="{% url 'dcim:device_add' %}" class="btn btn-xs btn-success" title="Add"><i class="fa fa-plus"></i></a>
+                                    <a href="{% url 'dcim:device_import' %}" class="btn btn-xs btn-info" title="Import"><i class="fa fa-download"></i></a>
+                                </div>
+                            {% endif %}
+                            <a href="{% url 'dcim:device_list' %}">Domains</a>
+                        </li>
+                        <li>
+                            {% if perms.dcim.add_devicerole %}
+                                <div class="buttons pull-right">
+                                    <a href="{% url 'dcim:devicerole_add' %}" class="btn btn-xs btn-success" title="Add"><i class="fa fa-plus"></i></a>
+                                    <a href="{% url 'dcim:devicerole_import' %}" class="btn btn-xs btn-info" title="Import"><i class="fa fa-download"></i></a>
+                                </div>
+                            {% endif %}
+                            <a href="{% url 'dcim:devicerole_list' %}">Host Records</a>
+                        </li>
+                        <li>
+                            {% if perms.dcim.add_platform %}
+                                <div class="buttons pull-right">
+                                    <a href="{% url 'dcim:platform_add' %}" class="btn btn-xs btn-success" title="Add"><i class="fa fa-plus"></i></a>
+                                    <a href="{% url 'dcim:platform_import' %}" class="btn btn-xs btn-info" title="Import"><i class="fa fa-download"></i></a>
+                                </div>
+                            {% endif %}
+                            <a href="{% url 'dcim:platform_list' %}">Reverse V4</a>
+                        </li>
+                        <li>
+                            {% if perms.dcim.add_devicetype %}
+                                <div class="buttons pull-right">
+                                    <a href="{% url 'dcim:devicetype_add' %}" class="btn btn-xs btn-success" title="Add"><i class="fa fa-plus"></i></a>
+                                    <a href="{% url 'dcim:devicetype_import' %}" class="btn btn-xs btn-info" title="Import"><i class="fa fa-download"></i></a>
+                                </div>
+                            {% endif %}
+                            <a href="{% url 'dcim:devicetype_list' %}">Reverse V6</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Settings</li>
+                        <li>
+                            <a href="{% url 'dcim:manufacturer_list' %}">Settings</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'dcim:inventoryitem_list' %}">Defaults</a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="dropdown{% if request.path|contains:'/ipam/' %} active{% endif %}">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">IPAM <span class="caret"></span></a>
                     <ul class="dropdown-menu">
